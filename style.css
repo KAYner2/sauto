@@ -1,0 +1,859 @@
+/* Сброс стилей по умолчанию */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Используем шрифт Poppins */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background-color: #fff;
+}
+
+/* Стили для кнопки "Забронировать" */
+.booking-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #000;
+    border-radius: 30px;
+    padding: 15px 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 1001; /* Чтобы кнопка была поверх меню */
+}
+
+.booking-button a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.booking-button:hover {
+    background-color: #444;
+    transform: scale(1.05);
+}
+
+/* Скрытое меню слева */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #000;
+    color: white;
+    transition: left 0.3s ease;
+    padding-top: 60px;
+    z-index: 1000; /* Чтобы меню было поверх контента */
+}
+
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.side-menu ul li {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.side-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+/* Кнопка для открытия меню (три полоски) */
+.menu-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 40px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 1002; /* Кнопка будет всегда поверх */
+}
+
+.bar {
+    width: 30px;
+    height: 5px;
+    background-color: white;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Эффект при нажатии (когда меню открыто) */
+.menu-toggle.open .bar:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.menu-toggle.open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.open .bar:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+/* Главная секция */
+.section-home {
+    background-color: #000;
+    color: white;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.banner h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.banner p {
+    font-size: 1.5em;
+}
+
+/* Новый раздел с фото-прокруткой */
+#portfolio {
+    width: 100%;
+    height: 100vh; /* Высота экрана */
+    overflow: hidden;
+    position: relative;
+}
+
+.photo-slider {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.full-screen-photo {
+    object-fit: cover; /* Чтобы изображение растягивалось по всему экрану */
+    width: 100vw; /* Занимает всю ширину экрана */
+    height: 100vh; /* Занимает всю высоту экрана */
+    transition: transform 0.3s ease;
+}
+
+/* О студии */
+#about {
+    padding: 50px 0;
+    text-align: center;
+    background-color: #fff;
+}
+
+#about h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Контакты */
+#contact {
+    padding: 50px 0;
+    text-align: center;
+    background-color: #f8f8f8;
+}
+
+#contact h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Оплата */
+#payment {
+    padding: 50px 0;
+    text-align: center;
+    background-color: #fff;
+}
+
+.payment-link {
+    background-color: #000;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1.2em;
+    border-radius: 5px;
+}
+
+/* Подвал */
+footer {
+    background-color: #000;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    /* Скрытое меню */
+    .side-menu {
+        width: 200px;
+    }
+
+    .side-menu ul li a {
+        font-size: 1.2em;
+    }
+
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gallery img {
+        width: 100%;
+        max-width: 500px;
+        margin-bottom: 20px;
+    }
+
+    .menu-toggle {
+        font-size: 2em;
+    }
+
+    .booking-button {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+}
+
+/* Плавная прокрутка */
+html {
+    scroll-behavior: smooth;
+}
+/* О студии */
+#about {
+    padding: 100px 20px;  /* Отступы сверху и снизу */
+    text-align: center;    /* Выравнивание текста по центру */
+    background-color: #fff; /* Белый фон */
+}
+
+#about h2 {
+    font-size: 3em;           /* Увеличим размер шрифта для заголовка */
+    margin-bottom: 20px;      /* Отступ снизу */
+    font-weight: 600;         /* Сделаем заголовок полужирным */
+    color: #000;              /* Черный цвет для заголовка */
+}
+
+#about p {
+    font-size: 1.5em;         /* Увеличим размер шрифта для текста */
+    line-height: 1.6;         /* Высота строки для лучшего восприятия */
+    max-width: 800px;         /* Максимальная ширина для абзаца */
+    margin: 0 auto;           /* Центрируем абзац */
+    color: #333;              /* Темно-серый цвет текста */
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    #about h2 {
+        font-size: 2em;       /* Уменьшаем размер заголовка на мобильных */
+    }
+
+    #about p {
+        font-size: 1.2em;     /* Уменьшаем размер текста на мобильных */
+    }
+}
+/* Новый раздел с большим текстом */
+#solo-selfie {
+    background-color: #f0f0f0; /* Светлый фон для контраста */
+    padding: 100px 20px; /* Добавляем отступы сверху и снизу */
+    text-align: center; /* Центрируем текст */
+}
+
+#solo-selfie .text-container {
+    max-width: 900px; /* Максимальная ширина контейнера */
+    margin: 0 auto; /* Центрируем контейнер */
+}
+
+#solo-selfie h2 {
+    font-size: 2.5em; /* Большой размер шрифта для заголовка */
+    font-weight: bold;
+    color: #333; /* Темный цвет текста */
+    margin-bottom: 20px; /* Отступ снизу */
+}
+
+#solo-selfie p {
+    font-size: 1.5em; /* Размер шрифта для параграфа */
+    color: #555; /* Цвет текста */
+    line-height: 1.6; /* Интерлиньяж для улучшения читаемости */
+    margin-top: 0;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    #solo-selfie h2 {
+        font-size: 2em; /* Уменьшаем размер текста для мобильных устройств */
+    }
+
+    #solo-selfie p {
+        font-size: 1.2em; /* Уменьшаем размер текста для мобильных устройств */
+    }
+}
+/* Новый раздел с выбором */
+#choose {
+    padding: 80px 20px;   /* Отступ сверху и снизу */
+    background-color: #f8f8f8; /* Светлый фон */
+}
+
+/* Контейнер для изображений и текста */
+.choose-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 40px;  /* Отступ снизу */
+}
+
+.choose-images {
+    display: flex;
+    gap: 20px;  /* Отступ между изображениями */
+}
+
+.choose-image {
+    width: 200px;   /* Ширина каждой картинки */
+    height: 300px;  /* Высота каждой картинки */
+    object-fit: cover;  /* Чтобы изображение не искажалось */
+    border-radius: 10px;  /* Скругление углов */
+}
+
+.choose-text h3 {
+    font-size: 2.5em;
+    color: #000;
+    font-weight: bold;
+    margin-left: 40px;  /* Отступ слева */
+}
+
+/* Блок с выбором фона и времени */
+.options {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.option {
+    width: 45%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.option h4 {
+    font-size: 2em;
+    color: #000;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.option p {
+    font-size: 1.2em;
+    color: #333;
+}
+
+/* Новый раздел с выбором */
+#choose {
+    padding: 80px 20px;   /* Отступ сверху и снизу */
+    background-color: #f8f8f8; /* Светлый фон */
+}
+
+/* Контейнер для изображений и текста */
+.choose-content {
+    display: flex;
+    justify-content: space-between;  /* Располагаем фото и текст по горизонтали */
+    align-items: center;
+    gap: 20px;  /* Промежуток между фотографиями и текстом */
+}
+
+.choose-images {
+    display: flex;
+    gap: 20px;  /* Отступ между изображениями */
+    width: 50%;  /* Задаем ширину контейнера для изображений */
+}
+
+.choose-image {
+    width: 100%;  /* Изображения заполняют контейнер */
+    height: 400px;  /* Высота изображений */
+    object-fit: cover;  /* Изображения растягиваются без искажения */
+    border-radius: 10px;  /* Скругление углов */
+}
+
+.choose-text {
+    width: 40%;  /* Ширина блока с текстом */
+}
+
+.choose-text h3 {
+    font-size: 2.5em;
+    color: #000;
+    font-weight: bold;
+    margin-bottom: 20px;  /* Отступ снизу */
+}
+
+/* Блок с выбором фона и времени */
+.option {
+    margin-bottom: 30px;  /* Отступ между блоками */
+}
+
+.option h4 {
+    font-size: 2em;
+    color: #000;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.option p {
+    font-size: 1.2em;
+    color: #333;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    /* Для мобильных устройств уменьшаем размеры блоков */
+    .choose-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .choose-text h3 {
+        font-size: 2em;
+        margin-left: 0;
+    }
+
+    .choose-images {
+        width: 80%;  /* Изображения на мобильных устройствах растягиваются на всю ширину */
+        max-width: 400px;
+        margin-bottom: 20px;  /* Отступ снизу для картинок */
+    }
+
+    .choose-image {
+        width: 100%;
+        height: 300px;  /* Меньшая высота изображений на мобильных */
+    }
+
+    .choose-text {
+        width: 80%;
+    }
+
+    .option {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+/* Стили для дубликата кнопки "Забронировать" */
+.booking-button-duplicate {
+    position: relative; /* Убираем фиксированное позиционирование для размещения под текстом */
+    margin-top: 20px;  /* Отступ сверху, чтобы кнопка была ниже текста "ВРЕМЯ" */
+    background-color: #000;
+    border-radius: 30px;
+    padding: 15px 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    cursor: pointer;  /* Указатель мыши, как на кнопке */
+}
+
+.booking-button-duplicate a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+/* Основные стили для блока "choose" */
+#choose {
+    padding: 50px 0;
+    background-color: #f8f8f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Контейнер для текстов и кнопок */
+.choose-content {
+    text-align: center;
+    max-width: 1200px; /* Чтобы все было не слишком растянуто */
+    width: 100%;
+}
+
+/* Стили для изображений */
+.choose-images {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;  /* Отступ снизу для изображений */
+}
+
+.choose-image {
+    max-width: 45%;  /* Ограничиваем размер изображений */
+    margin-right: 20px;  /* Отступ между изображениями */
+}
+
+/* Текстовые блоки и заголовок */
+.choose-text h3 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #000;
+}
+
+/* Основные стили для блока "choose" */
+#choose {
+    padding: 50px 0;
+    background-color: #f8f8f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Контейнер для текстов и кнопок */
+.choose-content {
+    text-align: center;
+    max-width: 1200px; /* Чтобы все было не слишком растянуто */
+    width: 100%;
+}
+
+/* Стили для изображений */
+.choose-images {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;  /* Отступ снизу для изображений */
+}
+
+.choose-image {
+    max-width: 45%;  /* Ограничиваем размер изображений */
+    margin-right: 20px;  /* Отступ между изображениями */
+}
+
+/* Текстовые блоки и заголовок */
+.choose-text h3 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #000;
+}
+
+/* Стили для опций ФОН и ВРЕМЯ */
+.option {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 2px solid #000;  /* Добавляем границу */
+    border-radius: 10px; /* Закругленные углы */
+    width: 350px;  /* Увеличиваем ширину блоков ФОН и ВРЕМЯ */
+    display: inline-block;
+    text-align: left;
+}
+
+.option h4 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.option p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+/* Стили для кнопки "Забронировать" */
+.booking-button-duplicate {
+    background-color: #000;
+    border-radius: 30px;
+    padding: 15px 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    width: 300px; /* Ограничиваем ширину кнопки */
+}
+
+.booking-button-duplicate a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    display: block;
+    text-align: center;
+}
+
+/* Эффект при наведении на кнопку "Забронировать" */
+.booking-button-duplicate:hover {
+    background-color: #444; /* Меняем цвет фона при наведении */
+    transform: scale(1.05); /* Увеличиваем кнопку при наведении */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Увеличиваем тень для лучшего эффекта */
+}
+
+/* Эффект прилипания кнопки */
+.booking-button-duplicate:active {
+    transform: translateY(-5px); /* Кнопка будет слегка двигаться вниз при нажатии */
+}
+
+/* Анимация для плавного движения */
+.booking-button-duplicate {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .choose-images {
+        flex-direction: column;
+    }
+
+    .choose-image {
+        max-width: 90%;  /* Уменьшаем размер изображений на мобильных устройствах */
+        margin-bottom: 20px;
+    }
+
+    .choose-text h3 {
+        font-size: 2em;
+    }
+
+    .option h4 {
+        font-size: 1.3em;
+    }
+
+    .option p {
+        font-size: 1em;
+    }
+
+    .booking-button-duplicate {
+        font-size: 1em;
+        padding: 10px 30px;
+        width: 250px; /* Меньше для мобильных */
+    }
+}
+/* Контейнер для двух видео */
+#large-videos {
+    width: 100%;
+    padding: 50px 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+/* Контейнер для видео */
+.video-container {
+    display: flex;
+    justify-content: space-between;  /* Располагаем видео с отступом */
+    align-items: center;
+    gap: 30px;  /* Между видео будет небольшой отступ */
+}
+
+/* Стили для каждого видео */
+.video-item {
+    width: 48%;  /* Каждое видео будет занимать 48% ширины контейнера */
+    position: relative;
+}
+
+/* Стили для видео */
+.large-video {
+    width: 100%;
+    height: auto;  /* Сохраняем пропорции видео */
+    object-fit: cover;  /* Видео будет растягиваться, чтобы заполнить блок */
+    border-radius: 10px;  /* Закругляем углы видео */
+    pointer-events: none;  /* Отключаем взаимодействие с видео */
+}
+/* Секция "О нас" */
+#about {
+    padding: 50px 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+/* Контейнер для блоков */
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 20px;
+    flex-wrap: wrap; /* Позволяет блокам переходить на новую строку */
+    margin: 0 auto;
+    max-width: 1200px; /* Ограничение ширины контейнера */
+}
+
+/* Каждый блок */
+.about-item {
+    flex: 1 1 22%; /* Блоки занимают 22% ширины контейнера (по 4 блока на строку) */
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+/* Номер в блоке */
+.about-number {
+    font-size: 3em;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+/* Текст в блоке */
+.about-text {
+    font-size: 1.2em;
+    color: #333;
+}
+
+/* Эффект при наведении на блок */
+.about-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .about-item {
+        flex: 1 1 45%; /* Блоки будут занимать по 45% ширины на экранах меньше 768px */
+    }
+}
+
+@media (max-width: 480px) {
+    .about-item {
+        flex: 1 1 100%; /* Блоки будут занимать 100% ширины на экранах меньше 480px */
+    }
+}
+/* Раздел "Подарочный сертификат" */
+#gift-certificate {
+    padding: 50px 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+/* Контейнер для текста и кнопки */
+.certificate-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#gift-certificate h2 {
+    font-size: 2.5em;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+#gift-certificate p {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+/* Кнопка "Купить сертификат" */
+.buy-button {
+    display: inline-block;
+    background-color: #000;
+    color: white;
+    padding: 15px 40px;
+    text-decoration: none;
+    font-size: 1.5em;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.buy-button:hover {
+    background-color: #444;
+    transform: scale(1.05);
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    #gift-certificate h2 {
+        font-size: 2em;
+    }
+
+    #gift-certificate p {
+        font-size: 1em;
+    }
+
+    .buy-button {
+        font-size: 1.2em;
+        padding: 12px 30px;
+    }
+}
+/* FAQ Section Styles */
+#faq {
+    background-color: #fff;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.faq-item {
+    width: 80%;
+    max-width: 900px;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.faq-item h4 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.faq-item p {
+    font-size: 1.2em;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .faq-item {
+        width: 90%; /* Делает блоки FAQ более гибкими */
+    }
+}
+
+/* Социальные сети */
+.footer-socials {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.vk-link {
+    display: inline-block;
+    padding: 15px 30px; /* Размеры обводки */
+    border: 2px solid #000; /* Черная окантовка */
+    border-radius: 30px; /* Округлые края */
+    color: white; /* Белый текст */
+    font-size: 1.2em;
+    text-decoration: none; /* Убираем подчеркивание */
+    text-align: center;
+    transition: all 0.3s ease; /* Плавный эффект */
+}
+
+.vk-link:hover {
+    background-color: #000; /* Черный фон при наведении */
+    color: white; /* Белый текст */
+    transform: scale(1.05); /* Эффект увеличения */
+}
+
+/* Скрыть ответы по умолчанию */
+.faq-answer {
+    display: none;
+}
+
+/* Когда класс .open добавлен, показываем ответ */
+.faq-item.open .faq-answer {
+    display: block;
+}

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Фото-студия</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<!-- Кнопка для открытия меню (три полоски) -->
+<div class="menu-toggle" id="menu-toggle">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+</div>
+
+<!-- Скрытое меню -->
+<div class="side-menu" id="side-menu">
+    <ul>
+        <li><a href="#home">Главная</a></li>
+        <li><a href="#studio">О студии</a></li>
+        <li><a href="#contact">Контакты</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#gift-certificate">Подарочный сертификат</a></li>
+    </ul>
+    <!-- Главная секция -->
+<section id="home">
+    <h1>Главная</h1>
+    <p>Добро пожаловать на сайт!</p>
+</section>
+
+<!-- О студии -->
+<section id="studio">
+    <h1>О студии</h1>
+    <p>Мы — SOLO Selfie Studio...</p>
+</section>
+
+<!-- Контакты -->
+<section id="contact">
+    <h1>Контакты</h1>
+    <p>Здесь будут контакты...</p>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+    <h1>FAQ</h1>
+    <p>Ответы на часто задаваемые вопросы...</p>
+</section>
+
+<!-- Подарочный сертификат -->
+<section id="gift-certificate">
+    <h1>Подарочный сертификат</h1>
+    <p>Информация о сертификате...</p>
+</section>
+
+</div>
+
+
+
+    <!-- Главная секция -->
+    <section id="home" class="section-home">
+        <div class="banner">
+            <h1>Добро пожаловать в нашу Фото-студию!</h1>
+            <p>Идеальные фотографии для любых событий</p>
+        </div>
+    </section>
+
+    <!-- Новый раздел с одной фото-прокруткой -->
+    <section id="portfolio">
+        <div class="photo-slider">
+            <img src="images/photo1.jpg" alt="Фото для студии" class="full-screen-photo">
+        </div>
+    </section>
+    <!-- Новый раздел с большим текстом -->
+    <section id="solo-selfie">
+        <div class="text-container">
+            <h2>SOLO selfie studio позволит тебе самому управлять фотографией</h2>
+            <p>У нас ты получишь полный контроль над процессом съемки, и сможешь стать фотографом своей жизни. В нашей студии ты сам решаешь, как будет выглядеть твоя фотография!</p>
+        </div>
+    </section>
+
+
+    <section id="choose">
+        <div class="choose-content">
+            <div class="choose-images">
+                <!-- Фото для ФОН -->
+                <img src="images/фон_белый.jpg" alt="Белый фон" class="choose-image">
+                <!-- Фото для ВРЕМЯ -->
+                <img src="images/время_слот.jpg" alt="Время слота" class="choose-image">
+            </div>
+            <div class="choose-text">
+                <h3>ВЫБЕРИ</h3>
+                <div class="option">
+                    <h4>ФОН</h4>
+                    <p>Выбери белый или черный фон для твоей фотографии.</p>
+                </div>
+                <div class="option">
+                    <h4>ВРЕМЯ</h4>
+                    <p>Один слот — 30 мин. Можно забронировать два, три или сколько угодно слотов подряд.</p>
+                </div>
+                <!-- Кнопка Забронировать -->
+                <div class="booking-button-duplicate">
+                    <a href="https://n1053343.yclients.com/company/946627/personal/menu?o=m2854969" target="_blank">Забронировать</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="large-videos">
+        <div class="video-container">
+            <!-- Первая видеозапись -->
+            <div class="video-item">
+                <video class="large-video" autoplay loop muted playsinline>
+                    <source src="videos/video1.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает элемент video.
+                </video>
+            </div>
+            <!-- Вторая видеозапись -->
+            <div class="video-item">
+                <video class="large-video" autoplay loop muted playsinline>
+                    <source src="videos/video2.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает элемент video.
+                </video>
+            </div>
+        </div>
+    </section>
+    <!-- О студии -->
+    <section id="about">
+        <h2>Как проходит съемка?</h2>
+        <section id="about">
+            <div class="about-container">
+                <div class="about-item">
+                    <div class="about-number">1</div>
+                    <div class="about-text">
+                        Вы попадаете в зал с большим зеркалом и проходите инструктаж
+                    </div>
+                </div>
+                <div class="about-item">
+                    <div class="about-number">2</div>
+                    <div class="about-text">
+                        Смотрите в зеркало, выбираете момент и делаете кадр с помощью кликера. Количество снимков не ограничено.
+                    </div>
+                </div>
+                <div class="about-item">
+                    <div class="about-number">3</div>
+                    <div class="about-text">
+                        В зале можно найти колонку и вентилятор.
+                    </div>
+                </div>
+                <div class="about-item">
+                    <div class="about-number">4</div>
+                    <div class="about-text">
+                        Чёрно-белые автопортреты автоматически обрабатываются и отправляются вам на почту в течение суток.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Контакты -->
+    <section id="contact">
+        <h2>Контакты</h2>
+        <p>Телефон: +7 (982) 107-34-67</p>
+    </section>
+
+    <section id="gift-certificate">
+        <div class="certificate-container">
+            <h2>Подарочный сертификат</h2>
+            <p>У него нет срока годности, получатель сможет забронировать съемку на любое время.</p>
+            <p>Также сертификат существует в электронном формате.</p>
+            <a href="https://o4212.yclients.com/loyalty" class="buy-button">КУПИТЬ СЕРТИФИКАТ</a>
+        </div>
+    </section>
+
+<!-- FAQ Section -->
+<div id="faq" class="faq-container">
+    <div class="faq-item">
+        <h4>Что такое съемка?</h4>
+        <p>Съемка — это процесс, в ходе которого мы создаем изображения или видео, capturing важные моменты или атмосферу. Она включает в себя работу с освещением, кадрированием и декорациями.</p>
+    </div>
+    <div class="faq-item">
+        <h4>Как я могу заказать съемку?</h4>
+        <p>Вы можете заказать съемку, заполнив форму на нашем сайте или связавшись с нами напрямую через контактные данные. Мы предложим вам несколько вариантов на выбор.</p>
+    </div>
+    <div class="faq-item">
+        <h4>Что входит в стоимость съемки?</h4>
+        <p>В стоимость съемки включено все необходимое: подготовка, оборудование, услуги фотографа/видеографа, а также обработка материалов. Мы предоставляем разные пакеты в зависимости от ваших потребностей.</p>
+    </div>
+    <div class="faq-item">
+        <h4>Как долго длится съемка?</h4>
+        <p>Длительность съемки зависит от ее сложности и типа. Стандартные фотосессии могут длиться от 1 до 3 часов. Видео съемка обычно занимает больше времени — от 3 до 6 часов.</p>
+    </div>
+</div>
+
+    
+
+
+    <!-- Овальная кнопка "Забронировать" -->
+    <div class="booking-button">
+        <a href="https://n1053343.yclients.com/company/946627/personal/menu?o=m2854969" target="_blank">Забронировать</a>
+    </div>
+
+<!-- Подвал -->
+<footer>
+    <div class="footer-content">
+        <!-- Социальные сети -->
+        <div class="footer-socials">
+            <!-- Текст с обводкой -->
+            <a href="https://vk.com/solo.selfiestudio" class="vk-link">
+                Наша группа ВКонтакте
+            </a>
+        </div>
+
+        <!-- Текстовая информация -->
+        <div class="footer-text">
+            <p>&copy; 2024 SOLO Selfie Studio. Все права защищены.</p>
+            <p>Разработано: <a href="https://example.com" target="_blank">Ваша компания</a></p>
+        </div>
+    </div>
+</footer>
+
+
+
+</body>
+</html>
